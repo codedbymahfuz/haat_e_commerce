@@ -16,6 +16,10 @@ import 'package:flutter/material.dart';
 
  static const Color discount = Color(0xFFF5A524);
 
+static const Color cardMintBg = Color(0xFFDDF2EC);
+static const Color cardCreamBg = Color(0xFFFFF1D6);
+static const Color accentBrown = Color(0xFF9A6400);
+
  static const Color redColor = Colors.red;
 
  

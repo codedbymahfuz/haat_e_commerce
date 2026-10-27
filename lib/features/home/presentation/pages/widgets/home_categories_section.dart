@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/theme/app_colors.dart';
+import 'package:haat_e_commerce/features/product/presentation/pages/product_shop_screen.dart';
 
 class HomeCategoriesSection extends StatelessWidget {
   const HomeCategoriesSection({super.key});
@@ -21,35 +22,75 @@ class HomeCategoriesSection extends StatelessWidget {
                 iconName: 'assets/icons/all.png',
                 name: 'All',
                 theme: theme,
-                onTap: () => debugPrint('All Button Click'),
+                onTap: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ProductShopScreen(currentButton: 'all'),
+                    ),
+                  );
+                }
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
                 iconName: 'assets/icons/gadget.png',
                 name: 'Gadgets',
                 theme: theme,
-                onTap: () => debugPrint('Gadgets Button Click'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ProductShopScreen(currentButton: 'gadgets'),
+                    ),
+                  );
+                },
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
                 iconName: 'assets/icons/fashion.png',
                 name: 'Fashion',
                 theme: theme,
-                onTap: () => debugPrint('Fashion Button Click'),
+                onTap: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ProductShopScreen(currentButton: 'fashion'),
+                    ),
+                  );
+                }
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
                 iconName: 'assets/icons/living-room.png',
                 name: 'Home',
                 theme: theme,
-                onTap: () => debugPrint('Home Button Click'),
+                onTap: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ProductShopScreen(currentButton: 'home'),
+                    ),
+                  );
+                }
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
                 iconName: 'assets/icons/skincare.png',
                 name: 'Beauty',
                 theme: theme,
-                onTap: () => debugPrint('Beauty Button Click'),
+                onTap: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ProductShopScreen(currentButton: 'beauty'),
+                    ),
+                  );
+                }
               ),
               const SizedBox(width: 10),
             ],

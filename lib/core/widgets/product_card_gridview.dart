@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/widgets/product_card.dart';
-import 'package:haat_e_commerce/core/product_list/list_map.dart';
-import 'package:haat_e_commerce/core/widgets/product_details_screen.dart';
+import 'package:haat_e_commerce/features/product/presentation/pages/product_details_screen.dart';
+
 
 class ProductCardGridView extends StatelessWidget {
   final List<Map<String, Object>> productsItem;
@@ -32,7 +32,7 @@ class ProductCardGridView extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         mainAxisExtent: 300,
-        childAspectRatio: 0.65,
+       
       ),
       itemBuilder: (context, index) {
         final item = productsItem[index];

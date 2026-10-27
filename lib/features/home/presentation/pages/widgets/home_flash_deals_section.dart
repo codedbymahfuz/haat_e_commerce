@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/widgets/product_card.dart';
 import 'package:haat_e_commerce/core/product_list/list_map.dart';
+import 'package:haat_e_commerce/features/product/presentation/pages/product_details_screen.dart';
+
 
 class HomeFlashDealsSection extends StatelessWidget {
-  const HomeFlashDealsSection({super.key});
+  final void Function() onPressed;
+  const HomeFlashDealsSection({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +19,13 @@ class HomeFlashDealsSection extends StatelessWidget {
             Text('Flash deals', style: theme.headlineMedium),
 
             TextButton(
-              onPressed: () {
-                debugPrint('See All Button Click');
-              },
+              onPressed: onPressed,
               child: Text('See All', style: theme.headlineSmall),
             ),
           ],
         ),
+
+        const SizedBox(height: 8),
 
         SizedBox(
           height: 300,
@@ -39,7 +42,9 @@ class HomeFlashDealsSection extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: ProductCard(
                     product: item,
-                    onTap: () => debugPrint('Select $index'),
+                    onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: (_)=> ProductDetailsScreen()));
+                    }
                   ),
                 ),
               );

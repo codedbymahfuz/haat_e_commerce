@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/product_list/list_map.dart';
 import 'package:haat_e_commerce/core/theme/app_colors.dart';
+import 'package:haat_e_commerce/core/widgets/cart_button.dart';
 import 'package:haat_e_commerce/core/widgets/product_card_gridview.dart';
 import 'package:haat_e_commerce/core/widgets/search_box.dart';
 import 'package:haat_e_commerce/features/home/presentation/pages/widgets/home_flash_deals_section.dart';
 import 'package:haat_e_commerce/features/home/presentation/pages/widgets/home_categories_section.dart';
 import 'package:haat_e_commerce/features/home/presentation/pages/widgets/banner_card.dart';
+import 'package:haat_e_commerce/features/product/presentation/pages/product_shop_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,14 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const SizedBox(height: 17),
             _homeHeadLine(theme),
-            const SizedBox(height: 7),
+            const SizedBox(height: 13),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
-                   SearchBox(),
+                    SearchBox(),
                     const SizedBox(height: 20),
 
                     SizedBox(
@@ -47,10 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     HomeCategoriesSection(),
 
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 12),
 
-
-                     HomeFlashDealsSection(),
+                    HomeFlashDealsSection(onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=> ProductShopScreen()));
+                    },),
 
                     const SizedBox(height: 10),
 
@@ -58,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     const SizedBox(height: 10),
 
-                    ProductCardGridView(productsItem: products,),
+                    ProductCardGridView(productsItem: products),
                   ],
                 ),
               ),
@@ -71,72 +73,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _homeHeadLine(TextTheme theme) {
     return Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Delivery to Sarishabari', style: theme.labelMedium),
-        const SizedBox(height: 7),
-        Text(
-          'Hi, Mahfuz',
-          textAlign: TextAlign.start,
-          style: theme.titleMedium?.copyWith(fontSize: 17),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Delivery to Sarishabari', style: theme.labelMedium),
+            const SizedBox(height: 7),
+            Text(
+              'Hi, Mahfuz',
+              textAlign: TextAlign.start,
+              style: theme.titleMedium?.copyWith(fontSize: 17),
+            ),
+          ],
+        ),
+         CartButton(
+          itemCount: 1,
+          onTap: () {
+            debugPrint('Cart Button Click');
+          },
         ),
       ],
-    ),
-    Padding(
-      padding: const EdgeInsets.only(top: 8, right: 12),
-      child: InkWell(
-        onTap: () => debugPrint('Cart Button Click'),
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: AppColors.primary,
-            border: Border.all(color: AppColors.border),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Stack(
-            clipBehavior: Clip.none, 
-            children: [
-           
-              Icon(
-                Icons.shopping_cart, 
-                color: AppColors.textPrimary,
-                size: 24,
-              ),
-              
-              Positioned(
-                top: -17,
-                right: -10,
-                child: Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: AppColors.redColor, 
-                    shape: BoxShape.circle,
-                  ),
-                  constraints: const BoxConstraints(
-                    minWidth: 16,
-                    minHeight: 16,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  ],
-);
+    );
   }
 }

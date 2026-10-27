@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/theme/app_colors.dart';
+import 'package:haat_e_commerce/features/product/presentation/pages/product_shop_screen.dart';
 
 class BannerCard extends StatelessWidget {
   const BannerCard({super.key});
@@ -45,13 +46,13 @@ class BannerCard extends StatelessWidget {
     ),
      child: Stack(children: [
       _bannerImage(), 
-      _buildBannerContent(theme),
+      _buildBannerContent(theme, context),
     ],
         ),
         );
   }
 
-  Widget _buildBannerContent(TextTheme theme) {
+  Widget _buildBannerContent(TextTheme theme, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       child: Column(
@@ -82,7 +83,9 @@ class BannerCard extends StatelessWidget {
           Spacer(),
 
           GestureDetector(
-            onTap: () => debugPrint('Shop Button Click'),
+            onTap: () {
+             Navigator.push(context, MaterialPageRoute(builder: (_)=> ProductShopScreen()));
+            },
             child: Container(
               height: 35,
               width: 85,

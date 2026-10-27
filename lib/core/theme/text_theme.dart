@@ -4,12 +4,12 @@ import 'package:haat_e_commerce/core/theme/app_colors.dart';
 class AppTextTheme {
   static TextTheme textTheme() {
     return TextTheme(
-      // titleLarge: TextStyle(
-      //   fontSize: 14,
-      //   height: 1.2,
-      //   fontWeight: FontWeight.w700,
-      //   color: AppColors.textColor,
-      // ),
+      titleLarge: TextStyle(
+        fontSize: 18,
+        height: 1.2,
+        fontWeight: FontWeight.w700,
+        color: AppColors.textPrimary,
+      ),
       titleMedium: const TextStyle(
         fontSize: 14,
         height: 1.2,
