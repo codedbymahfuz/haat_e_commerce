@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:haat_e_commerce/core/theme/app_colors.dart';
 
-class CartCount extends StatelessWidget {
+class QuantitySelector extends StatelessWidget {
  final void Function() onTapRemove;
  final void Function() onTapIncrease;
  final String countItem;
-  const CartCount({super.key, required this.onTapRemove, required this.countItem, required this.onTapIncrease});
+  const QuantitySelector({super.key, required this.onTapRemove, required this.countItem, required this.onTapIncrease});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFF3F6F5),
-        border: Border.all(color: Color(0xFFE3EAE8)),
-        borderRadius: BorderRadius.circular(5),
+        color: AppColors.background,
+        border: Border.all(color: AppColors.border),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,12 +24,12 @@ class CartCount extends StatelessWidget {
             InkWell(
               onTap: onTapRemove,
               child: Container(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(3),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(7),
+                  color: AppColors.primary,
+                  shape: BoxShape.circle
                 ),
-                child: Icon(Icons.remove, size: 18),
+                child: Icon(Icons.remove, size: 18, color: AppColors.textPrimary,),
               ),
             ),
 
@@ -41,12 +42,12 @@ class CartCount extends StatelessWidget {
             InkWell(
               onTap: onTapIncrease,
               child: Container(
-                 padding: EdgeInsets.all(5),
+                 padding: EdgeInsets.all(3),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
+                  color: AppColors.accent,
+                  shape: BoxShape.circle
                 ),
-                child: Icon(Icons.add, size: 18),
+                child: Icon(Icons.add, size: 18, color: AppColors.primary,),
               ),
             ),
           ],

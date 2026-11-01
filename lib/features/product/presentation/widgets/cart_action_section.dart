@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haat_e_commerce/core/theme/app_colors.dart';
-import 'package:haat_e_commerce/core/widgets/cart_count.dart';
+import 'package:haat_e_commerce/core/widgets/quantity_selector.dart';
 import 'package:haat_e_commerce/core/widgets/primary_button.dart';
 
 class CartActionSection extends StatefulWidget {
@@ -27,7 +27,7 @@ class _CartActionSectionState extends State<CartActionSection> {
         padding: const EdgeInsets.all(6.0),
         child: Row(
           children: [
-            CartCount(
+            QuantitySelector(
               onTapRemove: () {
                 if (count > 1) {
                   setState(() {

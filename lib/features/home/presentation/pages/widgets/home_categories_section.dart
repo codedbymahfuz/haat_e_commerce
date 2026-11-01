@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:haat_e_commerce/app/navigation/cubit/main_navigation_cubit.dart';
 import 'package:haat_e_commerce/core/theme/app_colors.dart';
-import 'package:haat_e_commerce/features/product/presentation/pages/product_shop_screen.dart';
+
 
 class HomeCategoriesSection extends StatelessWidget {
   const HomeCategoriesSection({super.key});
@@ -23,13 +25,9 @@ class HomeCategoriesSection extends StatelessWidget {
                 name: 'All',
                 theme: theme,
                 onTap: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          ProductShopScreen(currentButton: 'all'),
-                    ),
-                  );
+                 
+
+                  context.read<MainNavigationCubit>().changeTabAndCategory(1, 'all');
                 }
               ),
               const SizedBox(width: 10),
@@ -38,13 +36,8 @@ class HomeCategoriesSection extends StatelessWidget {
                 name: 'Gadgets',
                 theme: theme,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          ProductShopScreen(currentButton: 'gadgets'),
-                    ),
-                  );
+                   context.read<MainNavigationCubit>().changeTabAndCategory(1, 'gadgets');
+                 
                 },
               ),
               const SizedBox(width: 10),
@@ -53,13 +46,8 @@ class HomeCategoriesSection extends StatelessWidget {
                 name: 'Fashion',
                 theme: theme,
                 onTap: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          ProductShopScreen(currentButton: 'fashion'),
-                    ),
-                  );
+                   context.read<MainNavigationCubit>().changeTabAndCategory(1, 'fashion');
+                  
                 }
               ),
               const SizedBox(width: 10),
@@ -68,13 +56,8 @@ class HomeCategoriesSection extends StatelessWidget {
                 name: 'Home',
                 theme: theme,
                 onTap: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          ProductShopScreen(currentButton: 'home'),
-                    ),
-                  );
+                   context.read<MainNavigationCubit>().changeTabAndCategory(1, 'home');
+                  
                 }
               ),
               const SizedBox(width: 10),
@@ -83,13 +66,8 @@ class HomeCategoriesSection extends StatelessWidget {
                 name: 'Beauty',
                 theme: theme,
                 onTap: () {
-                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          ProductShopScreen(currentButton: 'beauty'),
-                    ),
-                  );
+                   context.read<MainNavigationCubit>().changeTabAndCategory(1, 'beauty');
+                 
                 }
               ),
               const SizedBox(width: 10),
