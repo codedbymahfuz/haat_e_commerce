@@ -31,7 +31,14 @@ class DesktopProfileScreenLayout extends StatelessWidget {
               const SizedBox(height: 25),
               const SizedBox(width: 700, child: ProfileStatsSection()),
               const SizedBox(height: 100),
-              SizedBox(width: 350, child: PrimaryButton(title: 'Sign out')),
+              SizedBox(width: 350, child: PrimaryButton(
+                title: 'Sign out',
+                onTap: () {
+                Navigator.pushNamedAndRemoveUntil(context, 
+                '/login', (route)=> false);
+              },
+                ),
+              ),
             ],
           ),
         ),

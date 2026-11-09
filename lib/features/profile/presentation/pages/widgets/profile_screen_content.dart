@@ -32,6 +32,10 @@ class ProfileScreenContent extends StatelessWidget {
 
             PrimaryButton(
               title: 'Sign out',
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(context, 
+                '/login', (route)=> false);
+              },
 
             ),
 

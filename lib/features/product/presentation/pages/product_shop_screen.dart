@@ -73,13 +73,15 @@ class _ProductShopScreenState extends State<ProductShopScreen> {
           child: Row(
             children: categories.map((category) {
               final isSelected = current == category.toLowerCase();
+
+              
+
               return _buildCategoryButton(
                 buttonName: category,
                 theme: theme,
                 isSelect: isSelected,
                 onTap: () {
-                  // এখানে ক্লিক করলে কিউবিট আপডেট হবে, ফলে শপ স্ক্রিন ও বটম নেভিগেশন সিঙ্ক থাকবে
-                  // ধরে নিচ্ছি শপ স্ক্রিনের ইনডেক্স ১
+                 
                   context.read<MainNavigationCubit>().changeTabAndCategory(
                     1,
                     category.toLowerCase(),

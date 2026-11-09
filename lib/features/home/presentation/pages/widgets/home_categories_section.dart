@@ -21,7 +21,7 @@ class HomeCategoriesSection extends StatelessWidget {
           child: Row(
             children: [
               _categoriesTitle(
-                iconName: 'assets/icons/all.png',
+                iconName: 'assets/icons/list.png',
                 name: 'All',
                 theme: theme,
                 onTap: () {
@@ -32,7 +32,7 @@ class HomeCategoriesSection extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
-                iconName: 'assets/icons/gadget.png',
+                iconName: 'assets/icons/apple.png',
                 name: 'Gadgets',
                 theme: theme,
                 onTap: () {
@@ -52,7 +52,7 @@ class HomeCategoriesSection extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               _categoriesTitle(
-                iconName: 'assets/icons/living-room.png',
+                iconName: 'assets/icons/sofa.png',
                 name: 'Home',
                 theme: theme,
                 onTap: () {

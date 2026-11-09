@@ -114,7 +114,7 @@ class BannerCard extends StatelessWidget {
           topRight: Radius.circular(10),
         ),
         child: Image.asset(
-          'assets/icons/fashion.png',
+          'assets/icons/gift.png',
           height: 100,
           width: 100,
           fit: BoxFit.cover,

@@ -3,8 +3,10 @@ import 'package:haat_e_commerce/core/theme/app_colors.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/cart_action_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/product_colors_list_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/product_image_list.dart';
+import 'package:haat_e_commerce/features/product/presentation/widgets/product_stock_badge.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/rating_rate_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/shipping_and_services.dart';
+import 'package:haat_e_commerce/features/product/presentation/widgets/size_list_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/top_headline.dart';
 
 class DetailsDesktopLayout extends StatefulWidget {
@@ -53,9 +55,9 @@ class _DetailsDesktopLayoutState extends State<DetailsDesktopLayout> {
                                   ),
                                 ),
                               ),
-                      
+
                               const SizedBox(width: 40),
-                      
+
                               Expanded(
                                 flex: 5,
                                 child: Column(
@@ -65,21 +67,19 @@ class _DetailsDesktopLayoutState extends State<DetailsDesktopLayout> {
                               ),
                             ],
                           ),
-                      
-                         
-                      
+
                           const SizedBox(height: 14),
-                      
+
                           const SizedBox(
                             width: 450,
                             child: ShippingAndServices(),
                           ),
-                      
+
                           const SizedBox(height: 10),
-                      
+
                           Text('Ratings', style: theme.titleMedium),
                           const SizedBox(height: 10),
-                      
+
                           const RatingRateSection(),
                         ],
                       ),
@@ -153,13 +153,21 @@ class _DetailsDesktopLayoutState extends State<DetailsDesktopLayout> {
           ],
         ),
 
+        const SizedBox(height: 10),
+
+        ProductStockBadge(productStock: 10),
+
         const SizedBox(height: 12),
 
         Text('Colour', style: theme.titleMedium?.copyWith(fontSize: 15)),
 
-        const SizedBox(height: 10),
+        const SizedBox(height: 12),
 
         ProductColorsListSection(),
+
+        const SizedBox(height: 10),
+
+        SizeListSection(),
 
         const SizedBox(height: 22),
 

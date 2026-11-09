@@ -94,7 +94,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   AppBar _appBar() {
     return AppBar(
-      toolbarHeight: 17,
+      toolbarHeight: 10,
       backgroundColor: AppColors.background,
       elevation: 0,
       scrolledUnderElevation: 0,

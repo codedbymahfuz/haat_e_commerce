@@ -26,4 +26,6 @@ class AppColors {
 
   static const Color redColor = Colors.red;
 
+  static  Color grey = Colors.grey.shade200;
+
 }

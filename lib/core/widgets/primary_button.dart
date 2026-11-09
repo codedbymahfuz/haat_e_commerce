@@ -7,6 +7,7 @@ class PrimaryButton extends StatelessWidget {
   final void Function()? onTap;
   final Color? buttonColor;
   final TextStyle? textStyle;
+  final BoxBorder? border;
 
   const PrimaryButton({
     super.key,
@@ -14,7 +15,7 @@ class PrimaryButton extends StatelessWidget {
     this.onTap,
     this.padding,
     this.buttonColor,
-    this.textStyle,
+    this.textStyle, this.border,
   });
 
   @override
@@ -27,7 +28,7 @@ class PrimaryButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: buttonColor ?? AppColors.accent,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.border),
+          border: border ?? Border.all(color: AppColors.border, ),
         ),
 
         child: Center(

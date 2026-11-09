@@ -3,8 +3,10 @@ import 'package:haat_e_commerce/core/theme/app_colors.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/cart_action_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/product_colors_list_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/product_image_list.dart';
+import 'package:haat_e_commerce/features/product/presentation/widgets/product_stock_badge.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/rating_rate_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/shipping_and_services.dart';
+import 'package:haat_e_commerce/features/product/presentation/widgets/size_list_section.dart';
 import 'package:haat_e_commerce/features/product/presentation/widgets/top_headline.dart';
 
 class ProductDetailsContent extends StatelessWidget {
@@ -13,6 +15,7 @@ class ProductDetailsContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TextTheme.of(context);
+
     return Column(
       children: [
         const SizedBox(height: 20),
@@ -96,6 +99,10 @@ class ProductDetailsContent extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
+                ProductStockBadge(productStock: 0),
+
+                const SizedBox(height: 12),
+
                 Text(
                   'Colour',
                   style: theme.titleMedium?.copyWith(fontSize: 15),
@@ -106,6 +113,10 @@ class ProductDetailsContent extends StatelessWidget {
                 ProductColorsListSection(),
 
                 const SizedBox(height: 14),
+
+                //_isFashion(theme),
+
+                SizeListSection(),
 
                 const ShippingAndServices(),
 
@@ -127,6 +138,7 @@ class ProductDetailsContent extends StatelessWidget {
       ],
     );
   }
+
 
   Widget _buildTagChip({
     required EdgeInsetsGeometry padding,
